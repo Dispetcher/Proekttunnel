@@ -1,3 +1,5 @@
+<?php $id = get_the_ID(); ?>
+
 <footer id="footer">
             <nav id="footer_nav" <?php if(418 == $post->ID):?>class="hidden"<?php endif;?>>
                 <div class="center_wrap">
@@ -16,9 +18,9 @@
                                 </div>
                                 <div class="dtc vab footer_logo_text">
                                     <a href="/">СРО А «Объединение <br>
-									проектировщиков подземных  <br>
-									сооружений, промышленных <br>
-									и гражданских объектов»</a>
+                                    проектировщиков подземных  <br>
+                                    сооружений, промышленных <br>
+                                    и гражданских объектов»</a>
                                 </div>
                             </div>
                             <p class="copy">© <?php if(418==$post->ID):?>© All rights reserved.<?php else:?>Все права защищены.<?php endif;?> <?php echo date('Y')?>.</p>
@@ -41,28 +43,47 @@
                                 <a href="mailto:info@metrotunnel.ru"><?php the_field('email','options')?></a>
                             </p>
                             <?php if(418==$post->ID):?>
-								<p class="footer_address">
-									<span class="label">Address:</span>
-									St Petersburg, Fuchika st, 4K, 611
-								</p>
-							<?php else:?>
-								<p class="footer_address">
-									<span class="label">Адрес:</span>
-									<?php the_field('address','options')?>
-								</p>
-							<?php endif;?>
+                                <p class="footer_address">
+                                    <span class="label">Address:</span>
+                                    St Petersburg, Fuchika st, 4K, 611
+                                </p>
+                            <?php else:?>
+                                <p class="footer_address">
+                                    <span class="label">Адрес:</span>
+                                    <?php the_field('address','options')?>
+                                </p>
+                            <?php endif;?>
                         </div>
                     </div><!--/.dt-->
                 </div><!--/.center_wrap-->
             </div><!--/.footer_content-->
         </footer><!--/#footer-->
+        
+<!-- Ресурсы страницы-->
+<?php if ( current_user_can( 'manage_options' ) ) { ?>
+<div style="position:fixed;z-index:999;top:50px;left:5px;padding:5px;font-size:7pt;color:#fff;background:#000;">
+<?php echo '<h6 style="font-size:7pt; margin:0">Loading time:'; timer_stop(1); echo 's/</h6>' ?>
+<?php echo '<h6 style="font-size:7pt; margin:0">Queries: '.get_num_queries().' /</h6>'; ?>
+<?php if (function_exists('memory_get_usage')) echo '<h6 style="font-size:7pt; margin:0">Memory used: '.round(memory_get_usage()/1024/1024, 2) . 'MB</h6>'; ?>
+</div>
+<?php } ?>
+        <?php if($id != 1720):?>
         <div class="to_top">
             <span>наверх</span>
         </div>
-		<?php wp_footer();?>
-		<script src="<?php bloginfo('template_url')?>/js/mask.js"></script>
+        <?php ; endif;?>
+
+        <?php wp_footer();?>
+        <script src="<?php bloginfo('template_url')?>/js/mask.js"></script>
         <script src="<?php bloginfo('template_url')?>/js/main_new.js"></script>
-		<!-- Yandex.Metrika counter -->
+        
+        <?php if ($id == 1720):?>
+        <script src="/wp-content/projapp/js/angular.js"></script>
+        <script src="/wp-content/projapp/js/app.js" type="text/javascript"></script>
+        <?php endif;?>
+        <script src="<?php bloginfo('template_url')?>/js/reestr.js"></script>
+
+        <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -91,6 +112,6 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/47406475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-		
+        
     </body>
 </html>

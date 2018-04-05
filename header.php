@@ -1,3 +1,5 @@
+<?php $id = get_the_ID(); ?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -61,7 +63,7 @@
 
         <link rel="stylesheet" href="<?php bloginfo('template_url')?>/css/normalize.min.css">
         <link rel="stylesheet" href="<?php bloginfo('template_url')?>/css/main_new.css">
-
+		<?php if($id == 1720): ?><link rel="stylesheet" href="/wp-content/projapp/css/app.css"><?php endif; ?>
         <!--<script src="<?php bloginfo('template_url')?>/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
 		<?php wp_head();?>
 		<script>
