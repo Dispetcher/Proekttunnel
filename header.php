@@ -63,7 +63,7 @@
 
         <link rel="stylesheet" href="<?php bloginfo('template_url')?>/css/normalize.min.css">
         <link rel="stylesheet" href="<?php bloginfo('template_url')?>/css/main_new.css">
-		<?php if($id == 1720): ?><link rel="stylesheet" href="/wp-content/projapp/css/app.css"><?php endif; ?>
+		<?php if($id == 1720 | $id == 1737): ?><link rel="stylesheet" href="/wp-content/projapp/css/app.css"><?php endif; ?>
         <!--<script src="<?php bloginfo('template_url')?>/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
 		<?php wp_head();?>
 		<script>
@@ -77,6 +77,9 @@
 		if(!is_front_page()) $dop_classes = 'inner_page';
 	?>
     <body <?php body_class($dop_classes)?>>
+		
+<?php if($id != 1737){ ?>		
+		
         <!--[if lt IE 8]>
             <p class="browserupgrade">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите браузер</a> для полноценной работы сайта.</p>
         <![endif]-->
@@ -124,4 +127,5 @@
 			endif;
 		?>
         <?php get_template_part('includes/submenu_block')?>
-        
+		
+<?php } ?>       

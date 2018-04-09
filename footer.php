@@ -1,7 +1,11 @@
-<?php $id = get_the_ID(); ?>
+<?php $id = get_the_ID(); 
+
+/***** Печатная версия карточки организации_ убираем футер******/
+
+ if($id != 1737){ ?>
 
 <footer id="footer">
-            <nav id="footer_nav" <?php if(418 == $post->ID):?>class="hidden"<?php endif;?>>
+            <nav id="footer_nav" <?php if($id == 418):?>class="hidden"<?php endif;?>>
                 <div class="center_wrap">
                     <ul class="footer_menu">
                         <?php wp_nav_menu(array('menu' => 'Нижнее меню', 'container' => '','items_wrap' => '%3$s')); ?>
@@ -23,12 +27,12 @@
                                     и гражданских объектов»</a>
                                 </div>
                             </div>
-                            <p class="copy">© <?php if(418==$post->ID):?>© All rights reserved.<?php else:?>Все права защищены.<?php endif;?> <?php echo date('Y')?>.</p>
+                            <p class="copy">© <?php if($id == 418):?>© All rights reserved.<?php else:?>Все права защищены.<?php endif;?> <?php echo date('Y')?>.</p>
                             
                         </div><!--/.footer_logo-->
                         <div class="dtc vab footer_phones">
                             <p class="footer_phone">
-                                <span class="label"><?php if(418==$post->ID):?>Tel:<?php else:?>Телефоны:<?php endif;?></span>
+                                <span class="label"><?php if($id == 418):?>Tel:<?php else:?>Телефоны:<?php endif;?></span>
                                 <a href="tel:<?php echo str_replace(' ','',get_field('phone_1','options'))?>"><?php the_field('phone_1','options')?></a>
                                 <span><?php the_field('phone_1_text','options')?></span>
                             </p>
@@ -73,15 +77,22 @@
         </div>
         <?php ; endif;?>
 
+<?php } ?>
+
+
         <?php wp_footer();?>
         <script src="<?php bloginfo('template_url')?>/js/mask.js"></script>
         <script src="<?php bloginfo('template_url')?>/js/main_new.js"></script>
         
-        <?php if ($id == 1720):?>
+        <?php if ($id == 1720){ ?>
         <script src="/wp-content/projapp/js/angular.js"></script>
         <script src="/wp-content/projapp/js/app.js" type="text/javascript"></script>
-        <?php endif;?>
-        <script src="<?php bloginfo('template_url')?>/js/reestr.js"></script>
+        <?php }elseif($id == 1737){?>
+        <script src="/wp-content/projapp/js/angular.js"></script>
+        <script src="/wp-content/projapp/js/app_print.js" type="text/javascript"></script>
+        <?php } ?>
+
+        <!-- <script src="<?php //bloginfo('template_url')?>/js/reestr.js"></script>  -->
 
         <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
