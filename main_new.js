@@ -304,5 +304,7 @@
 						$.cookie('pdprojread', '1', {expires: 30});
 					});
 			};
+		//Changing main images width (in News)
+			$(".wp-caption.alignnone").attr('style', 'width:auto');
     });
 })(jQuery)
