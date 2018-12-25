@@ -59,6 +59,8 @@
 				<meta name="keywords" content="<?php wp_title('');?>">
 			<?php endif;?>
 		<?php endif;?>
+		<!-- Google Captcha -->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="<?php bloginfo('template_url')?>/css/normalize.min.css">

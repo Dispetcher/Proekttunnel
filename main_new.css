@@ -1,4 +1,4 @@
-/* @Dispetcher  last mod 18.12 */
+/* @Dispetcher  last mod 25.12.18 */
 
 html {
     color: #222;
@@ -568,6 +568,9 @@ body.home .header_content {
 	width: 100%;
 	background-color: rgba(255,255,255,0.5);
 	z-index: 5;
+}
+.g-recaptcha > div{
+	margin: 10px auto;
 }
 .call_order_form_opener {
 	position: relative;

@@ -58,6 +58,18 @@
                                 </p>
                             <?php endif;?>
                         </div>
+                        <div class="dtc vab footer_social">
+                            <p class="footer_vk">
+                                <?php if(407==$post->ID):?>
+                                    <span class="label">Connect with us:</span>
+                                <?php ;else: ?>
+                                    <span class="label">Присоединяйся к нам в соцсетях:</span>
+                                <?php ;endif; ?>
+                                    <a href="https://vk.com/metroproekttunnel">
+                                        <img class="vk_logo" src="<?php echo get_template_directory_uri().'/img/vk-logo-white.png';?>">
+                                    </a>
+                            </p>                            
+                        </div>
                     </div><!--/.dt-->
                 </div><!--/.center_wrap-->
             </div><!--/.footer_content-->
@@ -92,11 +104,16 @@
         <script src="/wp-content/projapp/js/app_print.js" type="text/javascript"></script>
         <?php } ?>
 
+        <script>
+        function enableSubscrBtn(){
+            document.querySelector('#vypiskaReq').disabled = false;
+        };          
+        </script>
         <!-- <script src="<?php //bloginfo('template_url')?>/js/reestr.js"></script>  -->
 
         <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
-    (function (d, w, c) {
+ /*  (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
                 w.yaCounter47406475 = new Ya.Metrika2({
@@ -119,7 +136,7 @@
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
         } else { f(); }
-    })(document, window, "yandex_metrika_callbacks2");
+    })(document, window, "yandex_metrika_callbacks2");*/
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/47406475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
