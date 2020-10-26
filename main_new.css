@@ -1,4 +1,4 @@
-/* @Dispetcher  last mod 25.12.18 */
+/* @Dispetcher last mod 25.10.20 */
 
 html {
     color: #222;
@@ -2307,7 +2307,7 @@ input:checked + .pseudo_checkbox {
 		margin-right:40px;
 	}
 }
-@media (max-width: 1110px) {
+@media (max-width: 1120px) {
 	.footer_menu li{
 		margin-right:30px;
 	}
